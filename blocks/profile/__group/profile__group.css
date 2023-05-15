@@ -1,0 +1,9 @@
+.profile__group {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-direction: row;
+  justify-content: space-between;
+  outline: blue 2px solid;
+  box-sizing: border-box;
+}

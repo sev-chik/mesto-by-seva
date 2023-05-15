@@ -1,0 +1,17 @@
+.button-add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 0; */
+  /* margin: 0;   */
+}
+
+.button-add:hover {
+  opacity: 0.6;
+}
+
+
+
+/* .cover__overlay: {
+  background-color: rgba(42, 44, 47, .8);
+} */

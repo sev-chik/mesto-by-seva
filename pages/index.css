@@ -5,15 +5,23 @@
 @import url(../blocks/logo/logo.css);
 
 @import url(../blocks/header/header.css);
-/* @import url(../blocks/header/__line/header__line.css); */
 
-@import url(../blocks/header/header.css);
+@import url(../blocks/content/content.css);
 
+@import url(../blocks/profile/profile.css);
+@import url(../blocks/profile/__avatar/profile__avatar.css);
+@import url(../blocks/profile/__group/profile__group.css);
+@import url(../blocks/profile/__button-add/profile__button-add.css);
+@import url(../blocks/profile/__button-edit/profile__button-edit.css);
+@import url(../blocks/profile/__info/profile__info.css);
+@import url(../blocks/profile/__name/profile__name.css);
+@import url(../blocks/profile/__profession/profile__profession.css);
+@import url(../blocks/profile/__row/profile__row.css);
 
+@import url(../blocks/button-add/button-add.css);
+@import url(../blocks/button-add/__vector/botton-add__vector.css);
 
-
-/* 
 
 h1, h2, h3, div, img, body, header {
   outline: solid 1px red;
-} */
+}
