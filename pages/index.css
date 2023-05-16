@@ -21,6 +21,15 @@
 @import url(../blocks/button-add/button-add.css);
 @import url(../blocks/button-add/__vector/botton-add__vector.css);
 
+@import url(../blocks/elements/elements.css);
+@import url(../blocks/element/element.css);
+@import url(../blocks/element/__image/element__image.css);
+@import url(../blocks/element/__title/element__title.css);
+@import url(../blocks/element/__row/element__row.css);
+@import url(../blocks/element/__mark/element__mark.css);
+
+
+
 
 h1, h2, h3, div, img, body, header {
   outline: solid 1px red;
