@@ -6,3 +6,9 @@
   flex-direction: column;
   box-sizing: border-box;
 }
+
+@media screen and (max-width: 1279px) {
+  .profile__info {
+    margin: 0;
+  }
+}

@@ -3,7 +3,14 @@
   margin: 0;
   padding: 0;
   flex-direction: row;
-  justify-content: space-between;
   outline: blue 2px solid;
   box-sizing: border-box;
+  gap: 30px;
+}
+
+@media screen and (max-width: 800px) {
+  .profile__group {
+    flex-direction: column;
+    gap: 22px;
+  }
 }
