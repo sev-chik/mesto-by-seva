@@ -5,11 +5,11 @@
   padding: 0;
   max-width: 880px;
   width: auto;
-  grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
-  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(282px, 282px));
+  /* justify-items: center; */
   align-items: center;
   justify-content: center;
-  align-content: center;
+  /* align-content: center; */
 }
 
 @media screen and (max-width: 321px) {
