@@ -3,9 +3,7 @@
   margin: 0;
   padding: 0;
   flex-direction: row;
-  outline: blue 2px solid;
   box-sizing: border-box;
-  /* width: 100%; */
   gap: 30px;
 }
 
