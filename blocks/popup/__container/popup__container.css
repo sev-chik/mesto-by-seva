@@ -1,0 +1,5 @@
+.popup__container {
+  width: 100px;
+  height: 100px;
+  outline: 3px solid green;
+}
