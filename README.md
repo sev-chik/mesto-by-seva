@@ -9,7 +9,7 @@
 
 В работе использовались HTML и CSS, БЭМ методология и JS.
 
-<!-- Ссылка на GitHub Pages: https://sev-chik.github.io/russian-travel-by-seva/index.html  -->
+Ссылка на GitHub Pages: https://sev-chik.github.io/mesto-by-seva/index.html 
 
 ## Планы доработок
 
