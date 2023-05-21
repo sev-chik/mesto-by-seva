@@ -5,10 +5,9 @@
   padding: 0;
   flex-direction: column;
   box-sizing: border-box;
-  /* width: 100%; */
 }
 
-@media screen and (max-width: 1279px) {
+@media screen and (max-width: 917px) {
   .profile__info {
     margin: 0;
   }
