@@ -2,14 +2,18 @@
   min-width: 150px;
   min-height: 50px;
   border-radius: 2px;
+  border: white solid 2px;
   box-sizing: border-box;
-  background-image: url("../../../images/Add\ Button.svg");
+  background-image: url("../../../images/plus.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: black;
 }
 
 @media screen and (max-width: 917px) {
   .profile__button-add {
     min-width: 282px;
     min-height: 50px;
-    background-image: url("../../../images/Add\ Button2.svg");
+    background-image: url("../../../images/plus-mobile.png");
   }
 }

@@ -4,14 +4,22 @@
   align-self: center;
   min-width: 24px;
   min-height: 24px;
-  background-image: url("../../../images/Edit\ Button.svg");
+  border: white solid 1px;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../../../images/Vector-edit.svg");
+  background-color: black;
 }
 
 @media screen and (max-width: 917px) {
   .profile__button-edit {
-    background-image: url("../../../images/Edit\ Button2.svg");
+    background-image: url("../../../images/Vector-edit-mobile.svg");
     margin: 3px 0 0 10px;
     min-width: 18px;
     min-height: 18px;
   }
 }
+
+
+
