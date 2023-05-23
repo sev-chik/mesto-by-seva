@@ -9,7 +9,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-image: url("../../../images/Vector-edit.svg");
-  background-color: black;
+  background-color: transparent;
 }
 
 @media screen and (max-width: 917px) {
