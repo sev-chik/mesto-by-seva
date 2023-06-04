@@ -69,7 +69,7 @@
           </div>
         </article>   -->
       </section>
-      <div class="popup">
+      <div class="popup popup_option_profile">
         <div class="popup__container">
           <h2 class="popup__title">Редактировать профиль</h2>
           <form class="popup__form" method="get" action="#" name="popup">
@@ -80,13 +80,13 @@
           <button class="popup__button-close button" aria-label="Закрыть" type="button"></button>
         </div>
       </div>
-      <div class="popup">
+      <div class="popup popup_option_place">
         <div class="popup__container">
           <h2 class="popup__title">Новое место</h2>
           <form class="popup__form" method="get" action="#" name="popup">
-            <input class="popup__input popup__input_type_name" type="text" name="name" value="">
-            <input class="popup__input popup__input_type_about" type="text" name="about" value="">
-            <button class="popup__button-save button" type='submit'>Создать</button>
+            <input class="popup__input popup__input_type_name" type="text" name="name" value="" placeholder="Название">
+            <input class="popup__input popup__input_type_about" type="text" name="about" value="" placeholder="Ссылка на картинку">
+            <button class="popup__button-create button" type='submit'>Создать</button>
           </form>
           <button class="popup__button-close button" aria-label="Создать" type="button"></button>
         </div>
@@ -102,6 +102,7 @@
           <h2 class="element__title">534пв</h2>
           <button class="element__vector" type="button" aria-label="Выбрать избранным"></button>
         </div>
+        <button class="element__basket button" type="button" aria-label="Удалить элемент"></button>
       </article>
     </template>
     <script src='./scripts/index.js'></script>

@@ -1,5 +1,5 @@
 .element__vector {
-  margin: 0;
+  margin: 0 5px 0 0;
   padding: 0;
   cursor: pointer;
   width: 22px;
@@ -10,7 +10,7 @@
   box-sizing: border-box;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url("../../../images/Vector.svg");
+  background-image: url("../../../images/heart.svg");
   background-color: transparent;
 }
 
