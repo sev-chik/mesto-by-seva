@@ -63,6 +63,16 @@ function addFirstElements() {
     const basketButton = element.querySelector('.element__basket');
     basketButton.addEventListener('click', deleteElement);
 
+    const ImageButton = element.querySelector('.element__image');
+    ImageButton.addEventListener('click', function() {
+        const imageSrc = popupImage.querySelector('.popup__image');
+        const imageFigcaption = popupImage.querySelector('.popup__figcaption');
+        imageSrc.src = ImageButton.src;
+        imageSrc.alt = elementTitle.textContent;
+        imageFigcaption.textContent = elementTitle.textContent;
+        popupImage.classList.add('popup_opened');
+    });
+
     elementsContainer.append(element);
   }
 }
@@ -82,13 +92,18 @@ function popupAddOpen() {
   // console.log('popupAddOpen');    
 }
 
-function popupImageOpen() {
-  // popupPlaceNameValue.value = '';
-  // popupPlaceAboutValue.value = '';
-  popupImage.classList.add('popup_opened');
-  // console.log('popupAddOpen');    
-}
-popupImageOpen();
+// function popupImageOpen() {
+// // function popupImageOpen(ImageButton) {
+//   // popupPlaceNameValue.value = '';
+//   // popupPlaceAboutValue.value = '';
+
+//   const imageSrc = popupImage.querySelector('.popup__image');
+//   console.log(imageSrc.src);  
+//   popupImage.classList.add('popup_opened');
+
+//   // console.log('popupAddOpen');    
+// }
+// popupImageOpen();
 
 function  popupEditClose() {
   popupProfile.classList.remove('popup_opened');
@@ -119,6 +134,16 @@ function addElement() {
   // });
   const basketButton = element.querySelector('.element__basket');
   basketButton.addEventListener('click', deleteElement);
+
+  const ImageButton = element.querySelector('.element__image');
+  ImageButton.addEventListener('click', function() {
+      const imageSrc = popupImage.querySelector('.popup__image');
+      const imageFigcaption = popupImage.querySelector('.popup__figcaption');
+      imageSrc.src = ImageButton.src;
+      imageSrc.alt = elementTitle.textContent;
+      imageFigcaption.textContent = elementTitle.textContent;
+      popupImage.classList.add('popup_opened');
+  });
 
   elementsContainer.prepend(element);
 }
