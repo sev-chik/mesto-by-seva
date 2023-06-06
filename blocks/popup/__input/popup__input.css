@@ -11,6 +11,7 @@
   box-sizing: border-box;
   text-align: start;
   vertical-align: top;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1279px) {
