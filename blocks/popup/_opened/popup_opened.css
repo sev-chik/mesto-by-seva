@@ -1,11 +1,4 @@
 .popup_opened {
-  display: flex;
-  opacity: 0;
-  /* opacity: 1; */
-  transition: visibility 0s, opacity 0.3s linear;
+  visibility:visible;
+  opacity:1;
 }
-
-.popup_opened:hover {
-    visibility: visible;
-    opacity: 1;
-  }

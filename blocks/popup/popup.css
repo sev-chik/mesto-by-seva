@@ -4,8 +4,7 @@
   position: fixed;
   top: 0px;
   left: 0px;
-  display: none;
-  /* display: flex; */
+  display: flex;
   padding: 0px;
   margin: 0px;
   justify-content: center;
@@ -14,10 +13,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   box-sizing: border-box;
   z-index: 0;
-  /* visibility: hidden; */
+  opacity:0;
+  visibility: hidden;
+  transition: visibility 0.3s, opacity 0.3s linear;
 }
-
-/* .popup:hover {
-  visibility: visible;
-  transition: visibility 1.5s 1.5s linear;
-} */

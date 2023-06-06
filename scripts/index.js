@@ -50,12 +50,17 @@ function addElement(popupPlaceNameValue, popupPlaceAboutValue) {
       openPopup(popupImage);
   });
 
-  return elementsContainer.prepend(cloneElement);
+  return cloneElement;
 }
 
-for (let i = 0; i < initialCards.length; i++) {
-  addElement(initialCards[i].name, initialCards[i].link);
+function renderCard(cloneElement) {
+  elementsContainer.prepend(cloneElement);
 }
+
+initialCards.forEach(cloneElement => {
+  const element = addElement(cloneElement.name, cloneElement.link);
+  renderCard(element);
+});
 
 function changeLike(event) {
   event.target.classList.toggle('element__vector_active');
@@ -99,6 +104,7 @@ popupFormPlace.addEventListener('submit', function(evt) {
   evt.preventDefault();
   const popupPlaceNameValue = popupPlaceName.value;
   const popupPlaceAboutValue = popupPlaceAbout.value;
-  addElement(popupPlaceNameValue, popupPlaceAboutValue);
+  const cloneElement = addElement(popupPlaceNameValue, popupPlaceAboutValue);
+  renderCard(cloneElement);
   closePopup(popupPlace);
 });
