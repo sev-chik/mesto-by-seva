@@ -1,0 +1,29 @@
+.popup__input-error {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FF0000;
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-sizing: border-box;
+  text-align: start;
+  vertical-align: top;
+  min-width: 358px;
+  max-width: 358px;
+  /* min-height: 27px; */
+  height: 0px;
+  text-overflow: ellipsis;
+  /* overflow: hidden; */
+  /* position: absolute; */
+  /* white-space: nowrap; */
+  align-self: center;
+}
+
+
+@media screen and (max-width: 1279px) {
+  .popup__input-error {
+    min-width: 238px;
+    max-width: 238px;
+  }
+}
