@@ -30,10 +30,14 @@
       <div class="popup popup_option_profile">
         <div class="popup__container">
           <h2 class="popup__title">Редактировать профиль</h2>
-          <form class="popup__form" method="get" action="#" name="popup">
-            <input class="popup__input popup__input_type_name" type="text" name="name" value="">
-            <input class="popup__input popup__input_type_about" type="text" name="about" value="">
-            <button class="popup__button-save button" type='submit'>Сохранить</button>
+          <form class="popup__form" method="get" action="#" name="popup" novalidate>
+            <!-- <fieldset class="form__set"> -->
+            <input class="popup__input popup__input_type_name" type="text" id="name-input" name="name" value="" minlength="2" maxlength="40" required>
+            <span class="popup__input_type_name-error name-input-error"></span>
+            <input class="popup__input popup__input_type_about" type="text" id="about-input" name="about" value="" minlength="2" maxlength="200" required>
+            <span class="popup__input_type_about-error about-input-error"></span>
+            <button class="popup__button-save button button_disable" type='submit'>Сохранить</button>
+            <!-- </fieldset>  -->
           </form>
           <button class="popup__button-close button" aria-label="Закрыть" type="button"></button>
         </div>
@@ -41,10 +45,12 @@
       <div class="popup popup_option_place">
         <div class="popup__container">
           <h2 class="popup__title">Новое место</h2>
-          <form class="popup__form popup__form_place" method="get" action="#" name="popup">
-            <input class="popup__input popup__input_type_name" type="text" name="name" value="" placeholder="Название">
-            <input class="popup__input popup__input_type_about" type="text" name="about" value="" placeholder="Ссылка на картинку">
-            <button class="popup__button-create button" type='submit'>Создать</button>
+          <form class="popup__form popup__form_place" method="get" action="#" name="popup" novalidate>
+            <input class="popup__input popup__input_type_name" type="text" id="named-input" name="name" value="" placeholder="Название" minlength="2" maxlength="30" required>
+            <span class="popup__input_type_name-error named-input-error"></span>
+            <input class="popup__input popup__input_type_about" type="url" id="src-input" name="about" value="" placeholder="Ссылка на картинку" required>
+            <span class="popup__input_type_about-error src-input-error"></span>
+            <button class="popup__button-create button button_disable" type='submit'>Создать</button>
           </form>
           <button class="popup__button-close button" aria-label="Закрыть" type="button"></button>
         </div>
@@ -71,6 +77,7 @@
       </article>
     </template>
     <script src='./scripts/cards.js'></script>
+    <script src='./scripts/validate.js'></script>
     <script src='./scripts/index.js'></script>
 </body>
 </html>
