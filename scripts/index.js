@@ -33,7 +33,6 @@ function openPopup(popup) {
   document.addEventListener('keydown', function(evt) {
     if (evt.key === 'Escape') {
       closePopup(popup);
-      console.log(evt.key);
     }
   });
 }
