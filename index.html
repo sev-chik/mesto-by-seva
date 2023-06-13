@@ -28,39 +28,32 @@
       <section class="elements">
       </section>
       <div class="popup popup_option_profile">
-        <div class="popup__overlay"></div>
         <div class="popup__container">
           <h2 class="popup__title">Редактировать профиль</h2>
           <form class="popup__form popup__form_profile" method="get" action="#" name="popup" novalidate>
-            <fieldset class="popup__set">
               <input class="popup__input popup__input_type_name" type="text" id="name-input" name="name" value="" minlength="2" maxlength="40" required>
               <span class="popup__input-error name-input-error"></span>
               <input class="popup__input popup__input_type_about" type="text" id="about-input" name="about" value="" minlength="2" maxlength="200" required>
               <span class="popup__input-error about-input-error"></span>
               <button class="popup__button-save button button_inactive" type='submit'>Сохранить</button>
-            </fieldset> 
           </form>
           <button class="popup__button-close button" aria-label="Закрыть" type="button"></button>
         </div>
       </div>
       <div class="popup popup_option_place">
-        <div class="popup__overlay"></div>
         <div class="popup__container">
           <h2 class="popup__title">Новое место</h2>
           <form class="popup__form popup__form_place" method="get" action="#" name="popup" novalidate>
-            <fieldset class="popup__set">
               <input class="popup__input popup__input_type_name" type="text" id="named-input" name="name" value="" placeholder="Название" minlength="2" maxlength="30" required>
               <span class="popup__input-error named-input-error"></span>
               <input class="popup__input popup__input_type_about" type="url" id="src-input" name="about" value="" placeholder="Ссылка на картинку" required>
               <span class="popup__input-error src-input-error"></span>
               <button class="popup__button-create button" type='submit'>Создать</button>
-            </fieldset> 
           </form>
           <button class="popup__button-close button" aria-label="Закрыть" type="button"></button>
         </div>
       </div>
       <div class="popup popup_option_image">
-        <div class="popup__overlay"></div>
           <figure class="popup__figure">
             <img class="popup__image" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="Заброшенная церковь в Карачаевске">  
             <figcaption class="popup__figcaption">здесь будет подпись</figcaption>
