@@ -1,46 +1,28 @@
 
-// import {content as contentim} from './index.js'; 
-// console.log(contentim);
+import {openPopup} from './index.js'; 
 const content = document.querySelector('.content');
-const elementsContainer = content.querySelector('.elements');
-const profileName = content.querySelector('.profile__name');
-const profileProfession = content.querySelector('.profile__profession');
-const profileAddButton = content.querySelector('.profile__button-add');
-const profileEditButton = content.querySelector('.profile__button-edit');
-const popupProfile = content.querySelector('.popup_option_profile');
-const popupPlace = content.querySelector('.popup_option_place');
 const popupImage = content.querySelector('.popup_option_image');
-const popupProfileName = content.querySelector('.popup_option_profile .popup__input_type_name');
-const popupProfileAbout = content.querySelector('.popup_option_profile .popup__input_type_about');
-const popupPlaceName = content.querySelector('.popup_option_place .popup__input_type_name');
-const popupPlaceAbout = content.querySelector('.popup_option_place .popup__input_type_about');
-const popupFormProfile = content.querySelector('.popup_option_profile .popup__form');
-const popupFormPlace = content.querySelector('.popup_option_place .popup__form');
-const closeButtonProfile = content.querySelector('.popup_option_profile .popup__button-close');
-const closeButtonPlace = content.querySelector('.popup_option_place .popup__button-close');
-const closeButtonImage = content.querySelector('.popup_option_image .popup__button-close');
 const elementTemplateContent = document.querySelector('#element-template').content;
 const element = elementTemplateContent.querySelector('.element');
 const imageFigcaption = popupImage.querySelector('.popup__figcaption');
 const imageSrc = popupImage.querySelector('.popup__image');
-const popupList = document.querySelectorAll('.popup');
 
-function openPopup(popup) {
-  popup.classList.add('popup_opened');
-  document.addEventListener('keydown', closeByEsc);
-}
+// function openPopup(popup) {
+//   popup.classList.add('popup_opened');
+//   document.addEventListener('keydown', closeByEsc);
+// }
 
-function closeByEsc(evt) {
-  if (evt.key === 'Escape') {
-    const openedPopup = document.querySelector('.popup_opened');
-    closePopup(openedPopup); 
-  }
-} 
+// function closeByEsc(evt) {
+//   if (evt.key === 'Escape') {
+//     const openedPopup = document.querySelector('.popup_opened');
+//     closePopup(openedPopup); 
+//   }
+// } 
 
-function closePopup(popup) {
-  popup.classList.remove('popup_opened');
-  document.removeEventListener('keydown', closeByEsc);
-}
+// function closePopup(popup) {
+//   popup.classList.remove('popup_opened');
+//   document.removeEventListener('keydown', closeByEsc);
+// }
 
 export class Card {
   constructor(data, templateSelector) {
@@ -74,7 +56,7 @@ export class Card {
     basketButton.addEventListener('click', this._deleteElement);
   }
 
-  _addElement(popupPlaceNameValue, popupPlaceAboutValue) {
+  addElement(popupPlaceNameValue, popupPlaceAboutValue) {
     // this._popupPlaceNameValue = popupPlaceNameValue;
     // this._popupPlaceAboutValue = popupPlaceAboutValue;
     const cloneElement = element.cloneNode(true);
@@ -92,5 +74,5 @@ export class Card {
   
     return cloneElement;
   }
-  
+
 };

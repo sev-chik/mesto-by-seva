@@ -1,4 +1,18 @@
-const enableValidation = (settings) => {
+// const enableValidation = (settings) => {
+//   formList = Array.from(document.querySelectorAll(settings.formSelector));
+//   formList.forEach((formElement) => {
+//     setEventListeners(formElement, settings);
+//   });
+// };
+
+// function enableValidation (settings) {
+//   formList = Array.from(document.querySelectorAll(settings.formSelector));
+//   formList.forEach((formElement) => {
+//     setEventListeners(formElement, settings);
+//   });
+// };
+
+function enableValidation (settings) {
   formList = Array.from(document.querySelectorAll(settings.formSelector));
   formList.forEach((formElement) => {
     setEventListeners(formElement, settings);
