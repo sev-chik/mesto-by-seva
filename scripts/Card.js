@@ -39,6 +39,10 @@ export class Card {
       });
   }
 
+  _handleImageClick() {
+    
+  }
+
   _deleteElement(event) {
     event.target.closest('.element').remove();
   }

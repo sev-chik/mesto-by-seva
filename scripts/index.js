@@ -65,6 +65,10 @@ initialCards.forEach(cloneElement => {
   renderCard(element);
 });
 
+// function handleCardClick(name, link) {
+
+// }
+
 export function openPopup(popup) {
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', closeByEsc);
