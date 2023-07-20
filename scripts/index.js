@@ -1,5 +1,5 @@
 import {Card} from './Card.js'; 
-import FormValidator from './FormValidator.js'; 
+import {FormValidator} from './FormValidator.js'; 
 const content = document.querySelector('.content');
 const elementsContainer = content.querySelector('.elements');
 const profileName = content.querySelector('.profile__name');
@@ -97,9 +97,11 @@ popupList.forEach(popup => {
 profileAddButton.addEventListener('click', function(evt) {
   evt.stopPropagation();
   popupFormPlace.reset();
-  const inputList = Array.from(popupFormPlace.querySelectorAll('.popup__input'));
+  // const inputList = Array.from(popupFormPlace.querySelectorAll('.popup__input'));
   const buttonElement = popupFormPlace.querySelector('.button');
-  toggleButtonState(inputList, buttonElement, settings);
+  buttonElement.classList.add(settings.inactiveButtonClass);
+  buttonElement.disabled = true;
+  // toggleButtonState(inputList, buttonElement, settings);              //     ВЕРНУТЬ!!!!!!!!!!!
   openPopup(popupPlace);
 });
 
@@ -150,27 +152,8 @@ popupFormPlace.addEventListener('submit', function(evt) {
 
 // enableValidation(settings);
 
-
-// const formList = Array.from(document.querySelectorAll(settings.formSelector));
-// formList.forEach((formElement) => {
-
-enableValidation(settings);
-
-
-// const settings = {
-//   formSelector: '.popup__form',
-//   inputSelector: '.popup__input',
-//   submitButtonSelector: '.button',
-//   inactiveButtonClass: 'button_inactive',
-//   inputErrorClass: 'popup__input_type_error',
-//   errorClass: 'popup__input-error_active'
-// };
-
-
-const valid = new FormValidator(settings);
-console.log(valid, 'valid');
-console.log(valid._settings, '_settings');
-console.log(valid._element, '_element');
-console.log(valid._settings.formSelector, 'formSelector');
-// const ena = valid.enableValidation(valid._settings);
-// console.log(ena);
+const formList = Array.from(document.querySelectorAll(settings.formSelector));
+formList.forEach((formElement) => {
+  const formValidator = new FormValidator(settings, formElement);
+  formValidator.enableValidation(formValidator._settings, formValidator._element);
+});

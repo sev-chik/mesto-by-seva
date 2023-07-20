@@ -1,4 +1,3 @@
-
 import {openPopup} from './index.js'; 
 const content = document.querySelector('.content');
 const popupImage = content.querySelector('.popup_option_image');
@@ -31,8 +30,8 @@ export class Card {
   }
 
   _listenImage(elementImage) {
-    elementImage.addEventListener('click', function() {
-      // elementImage.addEventListener('click', () => {
+    // elementImage.addEventListener('click', function() {
+      elementImage.addEventListener('click', () => {
         imageSrc.src = elementImage.src;
         imageSrc.alt = elementImage.alt;
         imageFigcaption.textContent = elementImage.alt;
