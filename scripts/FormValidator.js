@@ -11,12 +11,16 @@ export class FormValidator {
   _setEventListeners (formElement, settings) {
     const inputList = Array.from(formElement.querySelectorAll(settings.inputSelector));
     const buttonElement = formElement.querySelector(settings.submitButtonSelector);
+    // this._cardImage.addEventListener('click', () => {
+    //   this._handleCardClick(this._name, this._link)
+    // });
     this._toggleButtonState(inputList, buttonElement, settings);
     inputList.forEach((inputElement) => {
       inputElement.addEventListener('input', () => {
         this._checkInputValidity(formElement, inputElement, settings);
         this._toggleButtonState(inputList, buttonElement, settings);
       });
+
     });
   };
 
@@ -29,7 +33,7 @@ export class FormValidator {
   };
 
   _toggleButtonState (inputList, buttonElement, settings) {
-    console.log('check NEW toggleButtonState');
+    // console.log('check NEW toggleButtonState');
     if(this._hasInvalidInput(inputList)) {
       buttonElement.classList.add(settings.inactiveButtonClass);
       buttonElement.disabled = true;
@@ -41,7 +45,7 @@ export class FormValidator {
   }
 
   _showInputError (formElement, inputElement, errorMessage, settings) {
-    console.log('check NEW _showInputError');
+    // console.log('check NEW _showInputError');
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
     inputElement.classList.add(settings.inputErrorClass);
     errorElement.textContent = errorMessage;
@@ -49,7 +53,7 @@ export class FormValidator {
   };
   
   _hideInputError (formElement, inputElement, settings) {
-    console.log('check NEW _hideInputError');
+    // console.log('check NEW _hideInputError');
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
     inputElement.classList.remove(settings.inputErrorClass);
     errorElement.classList.remove(settings.errorClass);
@@ -57,7 +61,7 @@ export class FormValidator {
   };
 
   _hasInvalidInput (inputList) {
-    console.log('check NEW _hasInvalidInput');
+    // console.log('check NEW _hasInvalidInput');
     return inputList.some((inputElement) => {
       return !inputElement.validity.valid
     })

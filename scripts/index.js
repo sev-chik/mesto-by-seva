@@ -18,10 +18,14 @@ const popupFormPlace = content.querySelector('.popup_option_place .popup__form')
 const closeButtonProfile = content.querySelector('.popup_option_profile .popup__button-close');
 const closeButtonPlace = content.querySelector('.popup_option_place .popup__button-close');
 const closeButtonImage = content.querySelector('.popup_option_image .popup__button-close');
+const imageFigcaption = popupImage.querySelector('.popup__figcaption');
+const imageSrc = popupImage.querySelector('.popup__image');
+
 // const elementTemplateContent = document.querySelector('#element-template').content;
 // const element = elementTemplateContent.querySelector('.element');
-// const imageFigcaption = popupImage.querySelector('.popup__figcaption');
-// const imageSrc = popupImage.querySelector('.popup__image');
+
+
+
 const popupList = document.querySelectorAll('.popup');
 const initialCards = [
   {
@@ -58,16 +62,6 @@ const settings = {
   inputErrorClass: 'popup__input_type_error',
   errorClass: 'popup__input-error_active'
 };
-
-initialCards.forEach(cloneElement => {
-  const card = new Card(cloneElement, '#element-template');
-  const element = card.addElement(card._name, card._link);
-  renderCard(element);
-});
-
-// function handleCardClick(name, link) {
-
-// }
 
 export function openPopup(popup) {
   popup.classList.add('popup_opened');
@@ -139,6 +133,13 @@ popupFormProfile.addEventListener('submit', function(evt) {
   closePopup(popupProfile);
 });
 
+function handleCardClick(name, link) {
+  imageSrc.src = link;
+  imageSrc.alt = name;
+  imageFigcaption.textContent = name;
+  openPopup(popupImage);
+}
+
 popupFormPlace.addEventListener('submit', function(evt) {
   evt.stopPropagation();
   evt.preventDefault();
@@ -150,11 +151,24 @@ popupFormPlace.addEventListener('submit', function(evt) {
   };
   const card = new Card(initialCards, '#element-template');
   const element = card.addElement(card._name, card._link);
+  const elementImage = element.querySelector('.element__image');
+  elementImage.addEventListener('click', () => {
+    handleCardClick(card._name, card._link);
+  });
   renderCard(element);
   closePopup(popupPlace);
 });
 
+
 // enableValidation(settings);
+
+initialCards.forEach(cloneElement => {
+  // handleCardClick(cloneElement.name, cloneElement.link);
+  const card = new Card(cloneElement, '#element-template', handleCardClick);
+  const element = card.addElement(card._name, card._link);
+  // card._handleCardClick (card._name, card._link);
+  renderCard(element);
+});
 
 const formList = Array.from(document.querySelectorAll(settings.formSelector));
 formList.forEach((formElement) => {
