@@ -21,6 +21,7 @@ const closeButtonImage = content.querySelector('.popup_option_image .popup__butt
 const imageFigcaption = popupImage.querySelector('.popup__figcaption');
 const imageSrc = popupImage.querySelector('.popup__image');
 const popupList = document.querySelectorAll('.popup');
+const elementTemplateContent = document.querySelector('#element-template').content;
 const initialCards = [
   {
     name: 'Архыз',
@@ -147,17 +148,14 @@ popupFormPlace.addEventListener('submit', function(evt) {
     link: popupPlaceAboutValue
   };
   const element = createCard(initialCards);
-  const elementImage = element.querySelector('.element__image');
-  elementImage.addEventListener('click', () => {
-    handleCardClick(elementImage.alt, elementImage.src);
-  });
   renderCard(element);
   closePopup(popupPlace);
 });
 
 
 function createCard(cloneElement) {
-  const card = new Card(cloneElement, '#element-template', handleCardClick);
+  // const card = new Card(cloneElement, '#element-template', handleCardClick);
+  const card = new Card(cloneElement, elementTemplateContent, handleCardClick);
   const element = card.addElement(cloneElement.name, cloneElement.link);
   return element;
   }

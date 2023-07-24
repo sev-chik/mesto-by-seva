@@ -1,10 +1,12 @@
-const elementTemplateContent = document.querySelector('#element-template').content;
-const element = elementTemplateContent.querySelector('.element');
+// const elementTemplateContent = document.querySelector('#element-template').content;
+// const element = elementTemplateContent.querySelector('.element');
 
 export class Card {
   constructor(data, templateSelector, handleCardClick) {
     this._name = data.name;
     this._link = data.link;
+    this._templateSelector = templateSelector;
+    this._element = this._templateSelector.querySelector('.element');
     this._handleCardClick = handleCardClick;
   }
 
@@ -49,12 +51,18 @@ export class Card {
   addElement(popupPlaceNameValue, popupPlaceAboutValue) {
     // this._popupPlaceNameValue = popupPlaceNameValue;
     // this._popupPlaceAboutValue = popupPlaceAboutValue;
-    const cloneElement = element.cloneNode(true);
+    // const cloneElement = element.cloneNode(true);
+    const cloneElement = this._element.cloneNode(true);
     const elementTitle = cloneElement.querySelector('.element__title');
     const elementImage = cloneElement.querySelector('.element__image');
     elementTitle.textContent = popupPlaceNameValue;
     elementImage.src = popupPlaceAboutValue;
     elementImage.alt = popupPlaceNameValue;
+
+
+    // console.log(elementTemplateContent, 'elementTemplateContent');
+    // console.log(document.querySelector('#element-template'));
+
     // elementTitle.textContent = this._popupPlaceNameValue;
     // elementImage.src = this._popupPlaceAboutValue;
     // elementImage.alt = this._popupPlaceNameValue;
