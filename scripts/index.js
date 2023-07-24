@@ -20,12 +20,6 @@ const closeButtonPlace = content.querySelector('.popup_option_place .popup__butt
 const closeButtonImage = content.querySelector('.popup_option_image .popup__button-close');
 const imageFigcaption = popupImage.querySelector('.popup__figcaption');
 const imageSrc = popupImage.querySelector('.popup__image');
-
-// const elementTemplateContent = document.querySelector('#element-template').content;
-// const element = elementTemplateContent.querySelector('.element');
-
-
-
 const popupList = document.querySelectorAll('.popup');
 const initialCards = [
   {
@@ -84,6 +78,20 @@ function renderCard(cloneElement) {
   elementsContainer.prepend(cloneElement);
 }
 
+function handleCardClick(name, link) {
+  // function handleCardClick() {
+    imageSrc.src = link;
+    imageSrc.alt = name;
+    imageFigcaption.textContent = name;
+    // imageSrc.src = this._link;
+    // imageSrc.alt = this._name;
+    // imageFigcaption.textContent = this._name;
+    // console.log(name, link, 'name, link');
+    openPopup(popupImage);
+  }
+  
+
+
 popupList.forEach(popup => {
   popup.addEventListener('mousedown', (evt) => {
     if (evt.target.classList.contains('popup')) {
@@ -92,21 +100,11 @@ popupList.forEach(popup => {
   })
 });
 
-profileAddButton.addEventListener('click', function(evt) {
-  evt.stopPropagation();
-  popupFormPlace.reset();
-  // const inputList = Array.from(popupFormPlace.querySelectorAll('.popup__input'));
-  const buttonElement = popupFormPlace.querySelector('.button');
-  buttonElement.classList.add(settings.inactiveButtonClass);
-  buttonElement.disabled = true;
-  // toggleButtonState(inputList, buttonElement, settings);              //     ВЕРНУТЬ!!!!!!!!!!!
-  openPopup(popupPlace);
-});
-
 profileEditButton.addEventListener('click', function(evt) {
   evt.stopPropagation();
   popupProfileName.value = profileName.textContent;
   popupProfileAbout.value = profileProfession.textContent;
+  profileFormValidator.resetValidation();
   openPopup(popupProfile);
 });
 
@@ -133,12 +131,11 @@ popupFormProfile.addEventListener('submit', function(evt) {
   closePopup(popupProfile);
 });
 
-function handleCardClick(name, link) {
-  imageSrc.src = link;
-  imageSrc.alt = name;
-  imageFigcaption.textContent = name;
-  openPopup(popupImage);
-}
+profileAddButton.addEventListener('click', function() {
+  popupFormPlace.reset();
+  placeFormValidator.resetValidation();
+  openPopup(popupPlace);
+});
 
 popupFormPlace.addEventListener('submit', function(evt) {
   evt.stopPropagation();
@@ -149,29 +146,29 @@ popupFormPlace.addEventListener('submit', function(evt) {
     name: popupPlaceNameValue,
     link: popupPlaceAboutValue
   };
-  const card = new Card(initialCards, '#element-template');
-  const element = card.addElement(card._name, card._link);
+  const element = createCard(initialCards);
   const elementImage = element.querySelector('.element__image');
   elementImage.addEventListener('click', () => {
-    handleCardClick(card._name, card._link);
+    handleCardClick(elementImage.alt, elementImage.src);
   });
   renderCard(element);
   closePopup(popupPlace);
 });
 
 
-// enableValidation(settings);
+function createCard(cloneElement) {
+  const card = new Card(cloneElement, '#element-template', handleCardClick);
+  const element = card.addElement(cloneElement.name, cloneElement.link);
+  return element;
+  }
 
 initialCards.forEach(cloneElement => {
-  // handleCardClick(cloneElement.name, cloneElement.link);
-  const card = new Card(cloneElement, '#element-template', handleCardClick);
-  const element = card.addElement(card._name, card._link);
-  // card._handleCardClick (card._name, card._link);
+  const element = createCard(cloneElement);
   renderCard(element);
 });
 
-const formList = Array.from(document.querySelectorAll(settings.formSelector));
-formList.forEach((formElement) => {
-  const formValidator = new FormValidator(settings, formElement);
-  formValidator.enableValidation(formValidator._settings, formValidator._element);
-});
+const profileFormValidator = new FormValidator(settings, popupFormProfile);
+profileFormValidator.enableValidation();
+
+const placeFormValidator = new FormValidator(settings, popupFormPlace);
+placeFormValidator.enableValidation();

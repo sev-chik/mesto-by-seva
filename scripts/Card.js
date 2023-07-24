@@ -8,11 +8,24 @@ export class Card {
     this._handleCardClick = handleCardClick;
   }
 
+  _addListeners(cloneElement, elementImage) {
+    const basketButton = cloneElement.querySelector('.element__basket');
+    basketButton.addEventListener('click', this._deleteElement);
+
+    const likeButton = cloneElement.querySelector('.element__vector');
+    likeButton.addEventListener('click', this._changeLike);
+
+    // elementImage.addEventListener('click', this._handleCardClick);
+    elementImage.addEventListener('click', () => {
+      // this._handleCardClick(elementImage.alt, elementImage.src);
+      this._handleCardClick(elementImage.alt, elementImage.src);
+      // this._handleCardClick(this._name, this._link);
+    });
+  }
   // _listenImage(elementImage) {
   //   console.log(elementImage, 'elementImage1');
   //     elementImage.addEventListener('click', this._handleImageClick);
   // }
-  
   // _listenImage(elementImage) {
   //   // elementImage.addEventListener('click', function() {
   //     elementImage.addEventListener('click', () => {
@@ -22,25 +35,17 @@ export class Card {
   //       openPopup(popupImage);
   //     });
   // }
-
   _deleteElement(event) {
     event.target.closest('.element').remove();
   }
 
-  _changeLike(event) {
+  _changeLike() {
     event.target.classList.toggle('element__vector_active');
   }
-
   // _deleteBasket(element) {
   //   const basketButton = element.querySelector('.element__basket');
   //   basketButton.addEventListener('click', this._deleteElement);
   // }
-
-  // _deleteBasket(element) {
-  //   const basketButton = element.querySelector('.element__basket');
-  //   basketButton.addEventListener('click', this._deleteElement);
-  // }
-
   addElement(popupPlaceNameValue, popupPlaceAboutValue) {
     // this._popupPlaceNameValue = popupPlaceNameValue;
     // this._popupPlaceAboutValue = popupPlaceAboutValue;
@@ -53,25 +58,25 @@ export class Card {
     // elementTitle.textContent = this._popupPlaceNameValue;
     // elementImage.src = this._popupPlaceAboutValue;
     // elementImage.alt = this._popupPlaceNameValue;
-    elementImage.addEventListener('click', () => {
-      this._handleCardClick(popupPlaceNameValue, popupPlaceAboutValue);
-    });
+
+    // elementImage.addEventListener('click', () => {
+    //   this._handleCardClick(popupPlaceNameValue, popupPlaceAboutValue);
+    // });
     
-    // this._changeLike(cloneElement);
-    const likeButton = cloneElement.querySelector('.element__vector');
-    likeButton.addEventListener('click', (event) => {
-      this._changeLike(event);
-    });
+    // const likeButton = cloneElement.querySelector('.element__vector');
+    // likeButton.addEventListener('click', () => {
+    //   this._changeLike();
+    // });
 
     // this._deleteBasket(cloneElement);
-    const basketButton = cloneElement.querySelector('.element__basket');
-    basketButton.addEventListener('click', this._deleteElement);
+    // const basketButton = cloneElement.querySelector('.element__basket');
+    // basketButton.addEventListener('click', this._deleteElement);
+    // const basketButton = cloneElement.querySelector('.element__basket');
+    // basketButton.addEventListener('click', this._deleteElement);
     // this._listenImage(elementImage);
+    this._addListeners(cloneElement, elementImage);
+
     return cloneElement;
   }
 
 };
-
-
-//нужно не только в функции отдельные выделить снятие лайка, удаление карточки, но и отдельные функции для простановки
-//слушателей.
